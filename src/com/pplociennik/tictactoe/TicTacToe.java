@@ -13,7 +13,7 @@ public class TicTacToe {
 
         board.displayBoard();
 
-        System.out.println("Select turn:\n1. Computer (X) / 2. User (O) : ");
+        System.out.println("Wybierz turę:\n1. Komputer (X) / 2. Gracz (O) : ");
 
         int choice = scan.nextInt();
 
@@ -28,10 +28,10 @@ public class TicTacToe {
 
             do {
                 if (!moveOK) {
-                    System.out.println("Cell already filled!");
+                    System.out.println("Komórka już zajęta!");
                 }
 
-                System.out.println("Your move: ");
+                System.out.println("Twój ruch: ");
                 Point userMove = new Point(scan.nextInt(), scan.nextInt());
                 moveOK = board.placeAMove(userMove, Board.PLAYER_O);
             } while (!moveOK);
@@ -42,17 +42,17 @@ public class TicTacToe {
                 break;
 
             board.minMax(0, Board.PLAYER_X);
-            System.out.println("Computer choose position: " + board.computerMove);
+            System.out.println("Komputer wybiera pozycję: " + board.computerMove);
 
             board.placeAMove(board.computerMove, Board.PLAYER_X);
             board.displayBoard();
         }
 
         if (board.hasPlayerWon(Board.PLAYER_X))
-            System.out.println("You lost!");
+            System.out.println("Przegrałeś!");
         else if (board.hasPlayerWon(Board.PLAYER_O))
-            System.out.println("You win!");
+            System.out.println("Zwycięstwo!");
         else
-            System.out.println("Draw!");
+            System.out.println("Remis!");
     }
 }

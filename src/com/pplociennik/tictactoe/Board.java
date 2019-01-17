@@ -91,7 +91,7 @@ public class Board {
                 max = Math.max(currentScore, max);
 
                 if (depth == 0)
-                    System.out.println("Computer score for position: " + point + " = " + currentScore);
+                    System.out.println("Komputer punktuje: " + point + " = " + currentScore);
 
                 if (currentScore >= 0)
                     if (depth == 0)
